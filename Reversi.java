@@ -1,6 +1,6 @@
 import java.awt.*;
 
-//コメントによる実験
+//コメントによる実験2
 
 import javax.swing.*;
 import java.awt.event.*;
