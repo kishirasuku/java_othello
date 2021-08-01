@@ -1,4 +1,7 @@
 import java.awt.*;
+
+//コメントによる実験
+
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
@@ -16,7 +19,7 @@ class Stone{
 	if(color == black || color == white){
 	    obverse = color;
 	}else{
-	    System.out.println("黒か白でなければいけません");
+	    System.out.println("鮟偵°逋ｽ縺ｧ縺ｪ縺代ｌ縺ｰ縺�縺代∪縺帙ｓ");
 	}
     }
 
@@ -259,7 +262,7 @@ public class Reversi extends JPanel{
     private int turn = 1;
     static JLabel lb1 = new JLabel();
     static JLabel lb2 = new JLabel();
-    static String lb2_text = "[黒:" + 2 + ",白:" + 2 + "]";
+    static String lb2_text = "[鮟�:" + 2 + ",逋ｽ:" + 2 + "]";
     
 
     public Reversi(){
@@ -277,7 +280,7 @@ public class Reversi extends JPanel{
 	f.getContentPane().setLayout(new FlowLayout());
 	f.getContentPane().add(new Reversi());
 
-	lb1.setText("黒の番です");
+	lb1.setText("鮟偵�ｮ逡ｪ縺ｧ縺�");
 	lb1.setBackground(Color.WHITE);
 	lb1.setForeground(Color.BLACK);
 	lb1.setOpaque(true);
@@ -302,18 +305,18 @@ public class Reversi extends JPanel{
     void MessageDialog(int black,int white){
 	String str;
 	if(black > white){
-	    str = "[黒:" + String.valueOf(black) + ",白:" + String.valueOf(white) + "]で黒の勝ち";
+	    str = "[鮟�:" + String.valueOf(black) + ",逋ｽ:" + String.valueOf(white) + "]縺ｧ鮟偵�ｮ蜍昴■";
 	}else if(white > black){
-	    str = "[黒:" + String.valueOf(black) + ",白:" + String.valueOf(white) + "]で白の勝ち";
+	    str = "[鮟�:" + String.valueOf(black) + ",逋ｽ:" + String.valueOf(white) + "]縺ｧ逋ｽ縺ｮ蜍昴■";
 	}else{
-	    str = "[黒:" + String.valueOf(black) + ",白:" + String.valueOf(white) + "]で引き分け";
+	    str = "[鮟�:" + String.valueOf(black) + ",逋ｽ:" + String.valueOf(white) + "]縺ｧ蠑輔″蛻�縺�";
 	}
 	JOptionPane.showMessageDialog(this,str,"message",JOptionPane.INFORMATION_MESSAGE);
 	System.exit(0);
     }
 
     void PassDialog(){
-	JOptionPane.showMessageDialog(this,"あなたはパスです","情報",JOptionPane.INFORMATION_MESSAGE);
+	JOptionPane.showMessageDialog(this,"縺ゅ↑縺溘�ｯ繝代せ縺ｧ縺�","諠�蝣ｱ",JOptionPane.INFORMATION_MESSAGE);
     }
 
     void change_turn(){
@@ -331,7 +334,7 @@ public class Reversi extends JPanel{
 
 	    if(flag==1){
 		turn = 2;
-		lb1.setText("白の番です");
+		lb1.setText("逋ｽ縺ｮ逡ｪ縺ｧ縺�");
 	    }else{
 		PassDialog();
 		System.out.println("pass");
@@ -348,7 +351,7 @@ public class Reversi extends JPanel{
 
 	    if(flag==1){
 		turn = 1;
-		lb1.setText("黒の番です");
+		lb1.setText("鮟偵�ｮ逡ｪ縺ｧ縺�");
 	    }else{
 		PassDialog();
 		System.out.println("pass");
@@ -373,7 +376,7 @@ public class Reversi extends JPanel{
 
 		board.evaluateBoard();
 
-		lb2_text = "[黒:" + String.valueOf(board.num_grid_black) + ",白:" + String.valueOf(board.num_grid_white) + "]";
+		lb2_text = "[鮟�:" + String.valueOf(board.num_grid_black) + ",逋ｽ:" + String.valueOf(board.num_grid_white) + "]";
 		lb2.setText(lb2_text);
 
 		repaint();
@@ -384,7 +387,7 @@ public class Reversi extends JPanel{
 
 		board.evaluateBoard();
 
-		lb2_text = "[黒:" + String.valueOf(board.num_grid_black) + ",白:" + String.valueOf(board.num_grid_white) + "]";
+		lb2_text = "[鮟�:" + String.valueOf(board.num_grid_black) + ",逋ｽ:" + String.valueOf(board.num_grid_white) + "]";
 		lb2.setText(lb2_text);
 
 		repaint();
